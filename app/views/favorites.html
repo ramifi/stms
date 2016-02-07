@@ -1,0 +1,24 @@
+﻿<table class="table table-hover  table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Price</td>
+            <td>Score</td>
+            <td>Description</td>
+            <td>Image</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in favoritesVM.favorites" ng-click="favoritesVM.showPopup(item)">
+            <td>{{item.id}}</td>
+            <td>{{item.names.title}}</td>
+            <td>{{item.prices.current}}</td>
+            <td>{{item.customerReviews.averageScore}}</td>
+            <td>{{item.descriptions.short}}</td>
+            <td><img src="{{item.images.standard}}" height="30" /></td>
+
+        </tr>
+    </tbody>
+</table>
+<popup show="favoritesVM.isShowPopup" item="favoritesVM.currentItem" remove="true"></popup>
